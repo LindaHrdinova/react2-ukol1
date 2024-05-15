@@ -16,33 +16,10 @@ export const Registration: React.FC = () => {
     passwordConfirm: '',
   });
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({
       ...user,
-      email: e.target.value,
-    });
-  };
-
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser({
-      ...user,
-      username: e.target.value,
-    });
-  };
-
-  const handlePassworldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser({
-      ...user,
-      password: e.target.value,
-    });
-  };
-
-  const handlePassworldConfirmChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    setUser({
-      ...user,
-      passwordConfirm: e.target.value,
+      [e.target.id]: e.target.value,
     });
   };
 
@@ -53,9 +30,10 @@ export const Registration: React.FC = () => {
         <div className="input-container ic1">
           <input
             className="input"
-            type="email"
+            id="email"
+            type="text"
             placeholder=" "
-            onChange={handleEmailChange}
+            onChange={handleChange}
           />
           <div className="cut"></div>
           <label className="placeholder">Email Address</label>
@@ -63,9 +41,10 @@ export const Registration: React.FC = () => {
         <div className="input-container ic2">
           <input
             className="input"
+            id="username"
             type="text"
             placeholder=" "
-            onChange={handleNameChange}
+            onChange={handleChange}
           />
           <div className="cut"></div>
           <label className="placeholder">User Name</label>
@@ -73,9 +52,10 @@ export const Registration: React.FC = () => {
         <div className="input-container ic2">
           <input
             className="input"
+            id="passworld"
             type="password"
             placeholder=" "
-            onChange={handlePassworldChange}
+            onChange={handleChange}
           />
           <div className="cut"></div>
           <label className="placeholder">Password</label>
@@ -83,9 +63,10 @@ export const Registration: React.FC = () => {
         <div className="input-container ic2">
           <input
             className="input"
+            id="passworldConfirm"
             type="password"
             placeholder=" "
-            onChange={handlePassworldConfirmChange}
+            onChange={handleChange}
           />
           <div className="cut"></div>
           <label className="placeholder">Confirm Password</label>
