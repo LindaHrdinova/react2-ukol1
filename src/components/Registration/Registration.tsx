@@ -34,9 +34,10 @@ export const Registration: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault;
     console.log(user);
   };
+
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -72,7 +73,6 @@ export const Registration: React.FC = () => {
             type="password"
             placeholder=" "
             onChange={handleChange}
-            value={user.password}
           />
           <div className="cut"></div>
           <label className="placeholder">Password</label>
@@ -84,16 +84,11 @@ export const Registration: React.FC = () => {
             type="password"
             placeholder=" "
             onChange={handleChange}
-            value={user.passwordConfirm}
           />
           <div className="cut"></div>
           <label className="placeholder">Confirm Password</label>
         </div>
         <button className="submit">REGISTER</button>
-        <p>Email: {user.email}</p>
-        <p>Name: {user.username}</p>
-        <p>Password: {user.password}</p>
-        <p>PasswordConfirm: {user.passwordConfirm}</p>
       </form>
     </>
   );
