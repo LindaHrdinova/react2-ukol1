@@ -33,9 +33,13 @@ export const Registration: React.FC = () => {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(user);
+  };
   return (
     <>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="title">REGISTRATION</div>
         <div className="input-container ic1">
           <input
