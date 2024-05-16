@@ -21,6 +21,16 @@ export const Registration: React.FC = () => {
       ...user,
       [e.target.id]: e.target.value,
     });
+
+    const email = user.email;
+
+    if (user.username === '' && email.includes('@')) {
+      console.log('email není prázdný');
+      setUser({
+        ...user,
+        username: email.split('@', 1),
+      });
+    }
   };
 
   return (
@@ -34,6 +44,7 @@ export const Registration: React.FC = () => {
             type="text"
             placeholder=" "
             onChange={handleChange}
+            value={user.email}
           />
           <div className="cut"></div>
           <label className="placeholder">Email Address</label>
@@ -45,9 +56,10 @@ export const Registration: React.FC = () => {
             type="text"
             placeholder=" "
             onChange={handleChange}
+            value={user.username}
           />
           <div className="cut"></div>
-          <label className="placeholder">User Name</label>
+          <label className="placeholder">Username</label>
         </div>
         <div className="input-container ic2">
           <input
@@ -56,6 +68,7 @@ export const Registration: React.FC = () => {
             type="password"
             placeholder=" "
             onChange={handleChange}
+            value={user.password}
           />
           <div className="cut"></div>
           <label className="placeholder">Password</label>
@@ -67,6 +80,7 @@ export const Registration: React.FC = () => {
             type="password"
             placeholder=" "
             onChange={handleChange}
+            value={user.passwordConfirm}
           />
           <div className="cut"></div>
           <label className="placeholder">Confirm Password</label>
