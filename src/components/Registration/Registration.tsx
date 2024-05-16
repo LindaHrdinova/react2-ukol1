@@ -22,13 +22,10 @@ export const Registration: React.FC = () => {
       [e.target.id]: e.target.value,
     });
 
-    const email = user.email;
-
-    if (user.username === '' && email.includes('@')) {
-      console.log('email není prázdný');
+    if (user.username === '' && user.email.includes('@')) {
       setUser({
         ...user,
-        username: email.split('@', 1),
+        username: user.email.split('@', 1),
       });
     }
   };
