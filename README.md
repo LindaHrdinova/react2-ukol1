@@ -18,4 +18,6 @@ Stylování komponenty řešit nemusíte.
    ```
 1. Provažte obsah formuláře se stavem `user`.
 1. Budeme chtít, aby se ve formuláři automaticky vyplnilo políčko User Name, pokud je User Name prázdné a pokud uživatel zadá validní email. Validní email poznáme tak, že obsahuje zavináč. Do User Name se pak vyplní část emailu před zavináčem. 
-1. Tlačítko pro odeslání formuláře nechť vypíše stavový objekt do konzole. 
+1. Tlačítko pro odeslání formuláře nechť vypíše stavový objekt do konzole.
+
+Zdroj formuláře: https://codepen.io/ainalem/pen/GRqPwoz
